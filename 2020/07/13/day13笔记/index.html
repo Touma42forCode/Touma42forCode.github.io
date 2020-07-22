@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>day13笔记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Day 13 笔记1.设计模式   专门解决一类问题的思想。   单例设计模式：为了只创建唯一的对象，需要 ​            1.将类中的构造器私有化， ​            2.在类中成员位置创建唯一对象，并用private static final修饰 ​            3.考虑到封装思想，需要将静态变量私有化，对外提供公共的访问方式  (饿汉式) ​">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day13笔记">
+<meta property="og:url" content="http://yoursite.com/2020/07/13/day13%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Day 13 笔记1.设计模式   专门解决一类问题的思想。   单例设计模式：为了只创建唯一的对象，需要 ​            1.将类中的构造器私有化， ​            2.在类中成员位置创建唯一对象，并用private static final修饰 ​            3.考虑到封装思想，需要将静态变量私有化，对外提供公共的访问方式  (饿汉式) ​">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-13T07:32:19.437Z">
+<meta property="article:modified_time" content="2020-07-10T07:20:34.836Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-day13笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/13/day13%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2020-07-13T07:32:19.437Z" itemprop="datePublished">2020-07-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      day13笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Day-13-笔记"><a href="#Day-13-笔记" class="headerlink" title="Day 13 笔记"></a>Day 13 笔记</h1><h2 id="1-设计模式"><a href="#1-设计模式" class="headerlink" title="1.设计模式"></a>1.设计模式</h2><p>   专门解决一类问题的思想。</p>
+<p>  单例设计模式：为了只创建唯一的对象，需要</p>
+<p>​            1.将类中的构造器私有化，</p>
+<p>​            2.在类中成员位置创建唯一对象，并用private static final修饰</p>
+<p>​            3.考虑到封装思想，需要将静态变量私有化，对外提供公共的访问方式  (饿汉式)</p>
+<p>​            1.类追踪的构造器私有化</p>
+<p>​            2.在类中成员位置定义（声明）一个这个类型的变量用private static修饰</p>
+<p>​            3.考虑到封装思想，将静态变量私有化，对外提供公共的访问方式</p>
+<h2 id="2-枚举类"><a href="#2-枚举类" class="headerlink" title="2.枚举类"></a>2.枚举类</h2><pre><code>格式：修饰符  enum  类名{</code></pre><p>​                        对象名1，对象名2    }</p>
+<p>​            枚举类的特点：</p>
+<p>​                    1.如果枚举类没有任何的构造器，JVM会提供一个无参的；不能被实例化；    </p>
+<p>​                    2.如果枚举类中的对象是通过无参构造器进行对象的创建，对象后面的小括号可以不写；</p>
+<p>​                        完整格式：</p>
+<p>​                                修饰符 enum 类名{</p>
+<p>​                                        对象名1（实参），对象名2（实参）….</p>
+<p>​                                }</p>
+<p>​                        3.枚举类中对象名必须放到第一行</p>
+<p>​                        4.枚举类中的对象其实用public static final修饰</p>
+<p>​                注意事项：</p>
+<p>​                        <strong>1.在java中枚举类默认继承Enum类，不能再继承其他类，但是可以实现接口。可以使用Enum中国的所有方法</strong></p>
+<p>​                        <strong>2.可以实现接口</strong></p>
+<p>​                    <strong>3.普通类不能继承枚举类，理论上可以，但是普通类实现不了枚举类内特殊的语法，所以不能继承</strong></p>
+<h3 id="枚举类常用方法："><a href="#枚举类常用方法：" class="headerlink" title="枚举类常用方法："></a>枚举类常用方法：</h3><p>​                toString（）；name（）；</p>
+<p>​                ordinal（），返回常量的次序号；</p>
+<p>​                value（）返回该枚举类的所有的常量对象；放回类型是当前枚举的数组类型</p>
+<h2 id="3-包装类"><a href="#3-包装类" class="headerlink" title="3.包装类"></a>3.包装类</h2><p>装箱与拆箱（已实现自动化）</p>
+<h3 id="基本类型-gt-字符串类型的方法"><a href="#基本类型-gt-字符串类型的方法" class="headerlink" title="基本类型==&gt;字符串类型的方法"></a>基本类型==&gt;字符串类型的方法</h3><ul>
+<li>字符串拼接，</li>
+<li>integer.tostring，</li>
+<li>String类的静态方法valueOf</li>
+</ul>
+<h3 id="字符串-gt-基本类型"><a href="#字符串-gt-基本类型" class="headerlink" title="字符串==&gt;基本类型"></a>字符串==&gt;基本类型</h3><ul>
+<li><p>​    包装类的构造器</p>
+<pre><code>int name = new Integer（“”）；自动装箱</code></pre></li>
+<li><p>包装类型的静态方法</p>
+<p> public static xxx parseInt（String s）</p>
+<p>character类没有parseChar方法</p>
+</li>
+</ul>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><h5 id="四种构造器-一种特殊的创建字符串对象法师"><a href="#四种构造器-一种特殊的创建字符串对象法师" class="headerlink" title="四种构造器+一种特殊的创建字符串对象法师"></a>四种构造器+一种特殊的创建字符串对象法师</h5><ul>
+<li>public String();创建一个新的字符串对象</li>
+<li>public String(String original)；用副本创建字符串对象</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/13/day13%E7%AC%94%E8%AE%B0/" data-id="ckcx7aqcj0005ccuyd07ock9t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/13/day14%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          day14笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/13/day12%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">day12总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/22/%E4%BA%8C%E8%99%8E%E5%BC%80%E9%94%81%E8%9B%8B%E7%B3%95%E8%A2%AB%E5%BC%84%E5%9D%8F/">二虎开锁蛋糕被弄坏</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/22/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/22/day16/">day16</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/13/%E4%B8%8A%E8%AF%BE%E5%A5%87%E6%80%9D/">上课奇思</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/13/%E5%85%B3%E4%BA%8E%E9%AB%98%E8%80%83%E6%83%B3%E8%AF%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%9D/">关于高考想说的一些话</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

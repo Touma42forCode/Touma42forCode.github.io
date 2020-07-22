@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>day07 总结 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="day07 总结1.1类的设计1.2面向对象技巧1.3类的设计1.4实例变量和局部变量的区别： 在代码中的位置不同  在内存中的位置不同 默认值不同 在代码中作用域不同 在内存中的生命周期不同  1.5 this关键字的第一种用法 在类中的实例方法中用来区分重名实例变量和局部变量 作用：哪个对象调用了this关键字所属的实例方法，这个this关键字就代表哪个对象  1.6 封装 封装思想在代码中的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day07 总结">
+<meta property="og:url" content="http://yoursite.com/2020/07/13/day07%20%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="day07 总结1.1类的设计1.2面向对象技巧1.3类的设计1.4实例变量和局部变量的区别： 在代码中的位置不同  在内存中的位置不同 默认值不同 在代码中作用域不同 在内存中的生命周期不同  1.5 this关键字的第一种用法 在类中的实例方法中用来区分重名实例变量和局部变量 作用：哪个对象调用了this关键字所属的实例方法，这个this关键字就代表哪个对象  1.6 封装 封装思想在代码中的">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-13T07:32:19.384Z">
+<meta property="article:modified_time" content="2020-07-03T01:20:08.813Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-day07 总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/13/day07%20%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2020-07-13T07:32:19.384Z" itemprop="datePublished">2020-07-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      day07 总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="day07-总结"><a href="#day07-总结" class="headerlink" title="day07 总结"></a>day07 总结</h1><h2 id="1-1类的设计"><a href="#1-1类的设计" class="headerlink" title="1.1类的设计"></a>1.1类的设计</h2><h2 id="1-2面向对象技巧"><a href="#1-2面向对象技巧" class="headerlink" title="1.2面向对象技巧"></a>1.2面向对象技巧</h2><h2 id="1-3类的设计"><a href="#1-3类的设计" class="headerlink" title="1.3类的设计"></a>1.3类的设计</h2><h2 id="1-4实例变量和局部变量的区别："><a href="#1-4实例变量和局部变量的区别：" class="headerlink" title="1.4实例变量和局部变量的区别："></a>1.4实例变量和局部变量的区别：</h2><ul>
+<li><p>在代码中的位置不同</p>
+</li>
+<li><h6 id="在内存中的位置不同"><a href="#在内存中的位置不同" class="headerlink" title="在内存中的位置不同"></a>在内存中的位置不同</h6></li>
+<li><h6 id="默认值不同"><a href="#默认值不同" class="headerlink" title="默认值不同"></a>默认值不同</h6></li>
+<li><h6 id="在代码中作用域不同"><a href="#在代码中作用域不同" class="headerlink" title="在代码中作用域不同"></a>在代码中作用域不同</h6></li>
+<li><h6 id="在内存中的生命周期不同"><a href="#在内存中的生命周期不同" class="headerlink" title="在内存中的生命周期不同"></a>在内存中的生命周期不同</h6></li>
+</ul>
+<h2 id="1-5-this关键字的第一种用法"><a href="#1-5-this关键字的第一种用法" class="headerlink" title="1.5 this关键字的第一种用法"></a>1.5 this关键字的第一种用法</h2><ul>
+<li>在类中的实例方法中用来区分重名实例变量和局部变量</li>
+<li>作用：哪个对象调用了this关键字所属的实例方法，这个this关键字就代表哪个对象</li>
+</ul>
+<h2 id="1-6-封装"><a href="#1-6-封装" class="headerlink" title="1.6 封装"></a>1.6 封装</h2><ul>
+<li>封装思想在代码中的体现就是权限修饰符</li>
+<li>权限从小到大：private&lt;缺省&lt;protected&lt;public</li>
+<li>封装思想优化java类<ul>
+<li>将类中的实例变量进行私有化（private关键字）</li>
+<li>针对私有化的实例变量提供访问方式：get/set方法</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-7-构造器"><a href="#1-7-构造器" class="headerlink" title="1.7 构造器"></a>1.7 构造器</h2><ul>
+<li>作用：初始化对象，如果带参数的构造器可以给相应的实例变量进行赋值</li>
+<li>构造器的特点：<ul>
+<li>构造器的名字与类名相同</li>
+<li>没有返回值类型，void也不能有</li>
+<li>构造器可以重载</li>
+<li>如果一个类没有构造器，jvm自动提供一个默认无参的构造器</li>
+<li>如果有类中有构造器，jvm不会再进行提供</li>
+</ul>
+</li>
+</ul>
+<p>​            </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/07/13/day07%20%E6%80%BB%E7%BB%93/" data-id="ckcx7aqci0004ccuyfru0avl3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/13/day08/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          day08
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">我的第一篇文章</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/22/%E4%BA%8C%E8%99%8E%E5%BC%80%E9%94%81%E8%9B%8B%E7%B3%95%E8%A2%AB%E5%BC%84%E5%9D%8F/">二虎开锁蛋糕被弄坏</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/22/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/22/day16/">day16</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/13/%E4%B8%8A%E8%AF%BE%E5%A5%87%E6%80%9D/">上课奇思</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/13/%E5%85%B3%E4%BA%8E%E9%AB%98%E8%80%83%E6%83%B3%E8%AF%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AF%9D/">关于高考想说的一些话</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
